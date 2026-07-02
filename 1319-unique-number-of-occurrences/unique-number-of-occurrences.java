@@ -5,9 +5,9 @@ class Solution {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
         HashSet<Integer> seen = new HashSet<>();
-        for(Integer key : map.keySet()){
-            if(seen.contains(map.get(key))) return false;
-            seen.add(map.get(key));
+        for(int freq : map.values()){
+            if(!seen.add(freq)) return false;
+            
         }
         return true;
     }
